@@ -1,5 +1,5 @@
-# hackerrank-challenge
+# HackerRank-Challenge
 
-in this repository, I will publish my real-time solutions to challenges proposed by the "Hacker rank" platform.
+in this repository, I will publish my real-time solutions to challenges proposed by the "HackerRank" platform.
 
 I'm open to suggestions, thanks for your attention.
