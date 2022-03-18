@@ -26,19 +26,38 @@ function readLine()
     {
         return inputString[currentLine++];
     }
-
-/*
- * Complete the 'plusMinus' function below.
- *
- * The function accepts INTEGER_ARRAY arr as parameter.
- */
-
 function plusMinus(arr) 
+{
+    let arrt = arr
+    let positive = []
+    let zero = []
+    let negative = []
+    let n = arrt.length
+    //loop for separe postives,zeros and negatives in arrays
+    for (let i in arrt)
     {
-        // Write your code here
-
+        if (arrt[i] > 0)
+        {
+            positive.push(arrt[i])
+        }
+        if (arrt[i] === 0)
+        {
+            zero.push(arrt[i])
+        }
+        if (arrt[i] < 0)
+        {
+            negative.push(arrt[i])
+        }
     }
-
+    //requested calculation
+    let resPositive = (positive.length/n).toFixed(6)
+    let resZero = (zero.length/n).toFixed(6)
+    let resNegative = (negative.length/n).toFixed(6)
+    //requested answer
+    console.log(resPositive)
+    console.log(resZero)
+    console.log(resNegative)
+}
 function main() 
     {
         const n = parseInt(readLine().trim(), 10);
