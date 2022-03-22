@@ -23,7 +23,7 @@ function readLine() {
 function miniMaxSum(arr) 
 {
     let Arr = arr
-    let n = arr.length
+    let n = Arr.length
     let sorted = Arr.sort((a, b) => a - b)
     let sumMini = sorted[0] + sorted[1] + sorted[2] + sorted[3]
     let sumMax = sorted[n-1] + sorted[n-2] + sorted[n-3] + sorted[n-4]
