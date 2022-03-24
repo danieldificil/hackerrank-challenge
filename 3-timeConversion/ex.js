@@ -31,10 +31,26 @@ function timeConversion(s)
 
     switch (true)
     {
-        case (ampm === "AM"):
+        case (ampm === "AM" && hour === "12"):
         {
+            let zeroHours = "00"
             let deleteAM = time.replace("AM","")
-            return deleteAM
+            let res = deleteAM.replace((deleteAM.substring(0 , 2)), `${zeroHours}`)
+            return res
+            break
+        }
+
+        case (ampm === "AM" && hour !== "12"):
+        {
+            let deleteAM2 = time.replace("AM","")
+            return deleteAM2
+            break
+        }
+        
+        case (ampm === "PM" && hour === "12"):
+        {
+            let deletePM = time.replace("PM","")
+            return deletePM
             break
         }
         
@@ -42,20 +58,11 @@ function timeConversion(s)
         {
             let newNumberHour = numberHour + 12
             let stringHour = String(newNumberHour)
-            let deletePM = time.replace("PM","")
-            let res = deletePM.replace((deletePM.substring(0 , 2)), `${stringHour}`)
-            return res
-            break
-        }
-
-        case (ampm === "PM" && hour === "12"):
-        {
-            let zeroHours = "00"
-            let deleteOtherPM = time.replace("PM","")
-            let res2 = deleteOtherPM.replace((deleteOtherPM.substring(0 , 2)), `${zeroHours}`)
+            let deletePM2 = time.replace("PM","")
+            let res2 = deletePM2.replace((deletePM2.substring(0 , 2)), `${stringHour}`)
             return res2
             break
-        }
+        }        
     }
 }
 
