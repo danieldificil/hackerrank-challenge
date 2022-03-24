@@ -24,7 +24,39 @@ function readLine() {
 
 function timeConversion(s)
 {
-    // Write your code here
+    let time = s
+    let ampm = time.slice(-2)
+    let hour = time.slice(0,2)
+    let numberHour = Number(hour)
+
+    switch (true)
+    {
+        case (ampm === "AM"):
+        {
+            let deleteAM = time.replace("AM","")
+            return deleteAM
+            break
+        }
+        
+        case (ampm === "PM" && hour != "12"):
+        {
+            let newNumberHour = numberHour + 12
+            let stringHour = String(newNumberHour)
+            let deletePM = time.replace("PM","")
+            let res = deletePM.replace((deletePM.substring(0 , 2)), `${stringHour}`)
+            return res
+            break
+        }
+
+        case (ampm === "PM" && hour === "12"):
+        {
+            let zeroHours = "00"
+            let deleteOtherPM = time.replace("PM","")
+            let res2 = deleteOtherPM.replace((deleteOtherPM.substring(0 , 2)), `${zeroHours}`)
+            return res2
+            break
+        }
+    }
 }
 
 function main() {
